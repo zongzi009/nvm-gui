@@ -1,0 +1,35 @@
+{
+  "name": "nvm-gui",
+  "private": true,
+  "version": "1.0.0",
+  "type": "commonjs",
+  "main": "main.js",
+  "description": "A GUI application for managing Node.js versions with NVM",
+  "author": "szk",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "electron": "electron .",
+    "start": "npm run build && electron .",
+    "package": "npm run build && electron-builder"
+  },
+  "dependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vite": "^6.2.0",
+    "electron": "^35.1.2"
+  },
+  "build": {
+    "appId": "com.example.nvmapp",
+    "win": {
+      "target": "nsis"
+    },
+    "files": [
+      "dist/**/*",
+      "main.js",
+      "preload.js"
+    ]
+  }
+}
